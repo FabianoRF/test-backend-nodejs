@@ -1,4 +1,4 @@
-<h1>Como Executar<h1>
+<h1>Como Executar</ h1>
 
 Esta aplicação esta configurada para rodar com um banco de dados Postgres em conjunto com o typeORM, podendo portanto
 funcionar com qualquer outro banco relacional, desde que feitas as configurações no arquivo ormconfig.json do projeto.
@@ -15,7 +15,7 @@ Por fim basta executar a aplicação com o comando:
 
 `yarn dev:server`
 
-<strong>Rotas da API<strong>
+<strong>Rotas da API</ strong>
 
 Foram criadas as seguintes rotas conforme solicitado nas histórias:
 
@@ -31,7 +31,7 @@ http://localhost:3333/products
 	"category": "roupas"
 }
 
-<hr>
+<hr/>
 
 - PUT- /products/:id -> Edita um produto os dados: title, description, price e category por json, e o "id" como route param
 
@@ -45,7 +45,7 @@ http://localhost:3333/products/1232
 	"category": "roupas"
 }
 
-<hr>
+<hr/>
 
 - DELETE- /products/:id -> Exclui um determinado produto com o "id" informado pelo parâmetro
 
@@ -53,7 +53,7 @@ Exemplo de requisição:
 
 http://localhost:3333/products/1232
 
-<hr>
+<hr/>
 
 - PATCH- /products/:id -> Altera a categoria de um produto, na qual é passado o "id" por parametro e o "category" pelo body
 
@@ -62,7 +62,7 @@ http://localhost:3333/products/1232
 	"category": "calçados"
 }
 
-<hr>
+<hr/>
 
 - GET - /products -> Lista todos produtos. Também aceita parametros via query params, sendo eles o "category" ou "title"
 
@@ -75,7 +75,7 @@ http://localhost:3333/products?category=category_name
 http://localhost:3333/products
 
 
-<h2>Observações<h2>
+<h2>Observações</h2>
 
 Toda a api foi desenvolvida em typescript, seguindo alguns patterns como repositorie e service, além de injeção de dependencias com tsyringe, de forma a obter uma aplicação "testável". Resalto que as configurações de testes unitários com jest
 foram feitas, porém apenas um service foi testado devido ao tempo, peço desculpas por não completar a tempo
