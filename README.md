@@ -1,40 +1,81 @@
-<h1>Backend Analyst Candidate Testing</h1>
+<h1>Como Executar<h1>
 
-Hello dear developer, in this test we will analyze your general knowledge and even speed of development. Below we will explain everything that will be needed.
-Do not be alarmed, we do not expect everyone to be able to complete all tasks, this test is the same presented for candidates of all experience levels, so do what you can without worry.
+Esta aplicação esta configurada para rodar com um banco de dados Postgres em conjunto com o typeORM, podendo portanto
+funcionar com qualquer outro banco relacional, desde que feitas as configurações no arquivo ormconfig.json do projeto.
 
-<strong>The challenge</strong>
+Por conveniência aconselho a usar o docker, com o seguinte comando(que executará um container postgres no docker):
 
-Your challenge is to develop an API, using Node.JS, for a product catalog management application. Thus, you must analyze and convert the user stories below into routes of an application.
- 
-<strong>User stories:</strong>
+`docker run --name postgres_anotaai -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres`
 
-- As a user I would like to register a product so that I can have access to the data of this product in the future (Title, description, price, category)
-- I as a user would like to be able to associate and edit a product category;
-- As a user I would like to be able to access the list of all products;
-- As a user I would like to be able to filter products by name or category;
-- I as a user would like to be able to update the product data;
-- I as a user would like to be able to delete a product from my catalog;
- 
-<strong>Instructions</strong>
-- <strong>To start the test, <strong>fork</strong> this repository, create a branch with its full name and then and send us the link to the test performed (link to your repository) . If you just clone the repository you will not be able to push and then it will be more complicated to make the pull request.</strong>
-- The choice of libraries, databases, architecture, etc. is at your discretion.
-- Change the README file explaining what it takes to run your application.
-- Paste the branch name into the GUPY system and indicate the completion of the test
-- If you want you can leave us feedback regarding the test
+Apos a criação do container, deve se criar uma base de dados, sugiro criar com o nome "desafio_anotaai" pois o mesmo já esta sendo usado no ormconfig.json. Após execute o seguinte comando para executar a migration, criando assim a tabela no banco:
 
- 
-<strong>Our analysis</strong>
-- Knowledge of Javascript, NodeJs, Express will be assessed for this position;
-- We'll look at how you structure the:
-  application layers;
-  outgoing calls,
-  environment variables,
-   cache,
-  unit tests,
-  logs;
-  error handling;
-  documentation.
-- Code organization, module separation, readability and comments.
-- Commit history.
-- The use of MongoDB is a differentiator
+`yarn typeorm migration:run`
+
+Por fim basta executar a aplicação com o comando:
+
+`yarn dev:server`
+
+<strong>Rotas da API<strong>
+
+Foram criadas as seguintes rotas conforme solicitado nas histórias:
+
+- POST - /products -> cria um novo produto passando os dados: title, description, price e category por json
+
+Exemplo de requisição:
+
+http://localhost:3333/products
+{
+	"title": "Produto novo",
+	"description": "descricao",
+	"price": 123.90,
+	"category": "roupas"
+}
+
+<hr>
+
+- PUT- /products/:id -> Edita um produto os dados: title, description, price e category por json, e o "id" como route param
+
+Exemplo de requisição:
+
+http://localhost:3333/products/1232
+{
+	"title": "Produto editado",
+	"description": "Um produto muitadflk adlkfjasdlk",
+	"price": 123.90,
+	"category": "roupas"
+}
+
+<hr>
+
+- DELETE- /products/:id -> Exclui um determinado produto com o "id" informado pelo parâmetro
+
+Exemplo de requisição:
+
+http://localhost:3333/products/1232
+
+<hr>
+
+- PATCH- /products/:id -> Altera a categoria de um produto, na qual é passado o "id" por parametro e o "category" pelo body
+
+http://localhost:3333/products/1232
+{
+	"category": "calçados"
+}
+
+<hr>
+
+- GET - /products -> Lista todos produtos. Também aceita parametros via query params, sendo eles o "category" ou "title"
+
+Exemplos de requisição(usando filtros ou não):
+
+http://localhost:3333/products?category=category_name&title=title_name
+
+http://localhost:3333/products?category=category_name
+
+http://localhost:3333/products
+
+
+<h2>Observações<h2>
+
+Toda a api foi desenvolvida em typescript, seguindo alguns patterns como repositorie e service, além de injeção de dependencias com tsyringe, de forma a obter uma aplicação "testável". Resalto que as configurações de testes unitários com jest
+foram feitas, porém apenas um service foi testado devido ao tempo, peço desculpas por não completar a tempo
