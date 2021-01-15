@@ -943,6 +943,11 @@ etag@~1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
+express-async-errors@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/express-async-errors/-/express-async-errors-3.1.1.tgz#6053236d61d21ddef4892d6bd1d736889fc9da41"
+  integrity sha512-h6aK1da4tpqWSbyCa3FxB/V6Ehd4EEB15zyQq9qe75OZBp0krinNKuH4rAY+S/U/2I36vdLAUFSjQJ+TFmODng==
+
 express@^4.17.1:
   version "4.17.1"
   resolved "https://registry.yarnpkg.com/express/-/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
@@ -2455,7 +2460,7 @@ tsutils@^3.17.1:
   dependencies:
     tslib "^1.8.1"
 
-tsyringe@^4.4.0:
+tsyringe@^4.2.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/tsyringe/-/tsyringe-4.4.0.tgz#cd8a6866316b4cf643ee5e72c41c8a221ccea73d"
   integrity sha512-SlMApe1lhIq546CDp7bF+IdF4RB6d+9C5T7B0AS0P/Bm+Qpizj/gEmZzvw9J/KlXPEt4qHTbi1TRvX3rCPSdTg==

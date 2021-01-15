@@ -3,7 +3,7 @@ import { inject, injectable } from 'tsyringe';
 import AppError from '../errorHandler/AppError';
 
 import Product from '../database/entities/Product';
-import IProductsRepository from '../repositories/implementations/ProductsRepository';
+import IProductsRepository from '../repositories/models/IProductsRepository';
 
 interface IRequest {
   title: string;

@@ -2,7 +2,7 @@ import Product from '../../database/entities/Product';
 
 import ICreateProductDTO from '../dtos/ICreateProductDTO';
 
-export default interface IClientRepository {
+export default interface IProductsRepository {
   create(data: ICreateProductDTO): Promise<Product>;
   update(id: string, data: ICreateProductDTO): Promise<Product | undefined>;
   findAll(): Promise<Product[]>;

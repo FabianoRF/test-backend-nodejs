@@ -3,8 +3,9 @@ import { getRepository, Repository } from 'typeorm';
 import Product from '../../database/entities/Product';
 import IProductsRepository from '../models/IProductsRepository';
 import ICreateProductDTO from '../dtos/ICreateProductDTO';
+import IUpdateProductDTO from '../dtos/IUpdateProductDTO';
 
-class ClientRepository implements IProductsRepository {
+class ProductsRepository implements IProductsRepository {
   private ormRepository: Repository<Product>;
 
   constructor() {
@@ -47,7 +48,7 @@ class ClientRepository implements IProductsRepository {
 
   public async update(
     id: string,
-    data: ICreateProductDTO,
+    data: IUpdateProductDTO,
   ): Promise<Product | undefined> {
     await this.ormRepository.update(id, data);
 
@@ -57,4 +58,4 @@ class ClientRepository implements IProductsRepository {
   }
 }
 
-export default ClientRepository;
+export default ProductsRepository;

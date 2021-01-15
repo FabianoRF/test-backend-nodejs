@@ -1,12 +1,14 @@
 import 'reflect-metadata';
+import 'express-async-errors';
 import express, { Request, Response, NextFunction } from 'express';
 
 import './database';
+import './container';
 import AppError from './errorHandler/AppError';
 import routes from './http/routes';
 
 const app = express();
-
+app.use(express.json());
 app.use(routes);
 
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {

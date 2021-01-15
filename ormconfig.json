@@ -5,6 +5,7 @@
   "username": "postgres",
   "password": "docker",
   "database": "desafio_anotaai",
+  "entities": ["./src/database/entities/*.ts"],
   "migrations": [
     "./src/database/migrations/*.ts"
   ],
