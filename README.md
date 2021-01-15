@@ -36,48 +36,50 @@ Foram criadas as seguintes rotas conforme solicitado nas histórias:
 
 - PUT- /products/:id -> Edita um produto os dados: title, description, price e category por json, e o "id" como route param
 
-Exemplo de requisição:
+    Exemplo de requisição:
 
-http://localhost:3333/products/1232
+    http://localhost:3333/products/1232
 
-JSON : 
-{
-	"title": "Produto editado",
-	"description": "Um produto muitadflk adlkfjasdlk",
-	"price": 123.90,
-	"category": "roupas"
-}
+    JSON : 
+    {
+      "title": "Produto editado",
+      "description": "Um produto muitadflk adlkfjasdlk",
+      "price": 123.90,
+      "category": "roupas"
+    }
 
 <hr/>
 
 - DELETE- /products/:id -> Exclui um determinado produto com o "id" informado pelo parâmetro
 
-Exemplo de requisição:
+    Exemplo de requisição:
 
-http://localhost:3333/products/1232
+    http://localhost:3333/products/1232
 
 <hr/>
 
 - PATCH- /products/:id -> Altera a categoria de um produto, na qual é passado o "id" por parametro e o "category" pelo body
 
-http://localhost:3333/products/1232
+    Exemplo de requisição:
 
-JSON : 
-{
-	"category": "calçados"
-}
+    http://localhost:3333/products/1232
+
+    JSON : 
+    {
+      "category": "calçados"
+    }
 
 <hr/>
 
 - GET - /products -> Lista todos produtos. Também aceita parametros via query params, sendo eles o "category" ou "title"
 
-Exemplos de requisição(usando filtros ou não):
+    Exemplos de requisição(usando filtros ou não):
 
-http://localhost:3333/products?category=category_name&title=title_name
+    http://localhost:3333/products?category=category_name&title=title_name
 
-http://localhost:3333/products?category=category_name
+    http://localhost:3333/products?category=category_name
 
-http://localhost:3333/products
+    http://localhost:3333/products
 
 
 <h2>Observações</h2>
