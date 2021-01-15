@@ -1,4 +1,4 @@
-<h1>Como Executar</ h1>
+<h1>Como Executar</h1>
 
 Esta aplicação esta configurada para rodar com um banco de dados Postgres em conjunto com o typeORM, podendo portanto
 funcionar com qualquer outro banco relacional, desde que feitas as configurações no arquivo ormconfig.json do projeto.
@@ -15,7 +15,7 @@ Por fim basta executar a aplicação com o comando:
 
 `yarn dev:server`
 
-<strong>Rotas da API</ strong>
+<strong>Rotas da API</strong>
 
 Foram criadas as seguintes rotas conforme solicitado nas histórias:
 
