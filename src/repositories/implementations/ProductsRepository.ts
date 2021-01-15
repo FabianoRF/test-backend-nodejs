@@ -1,9 +1,10 @@
-import { getRepository, Repository } from 'typeorm';
+import { getRepository, Like, Repository } from 'typeorm';
 
 import Product from '../../database/entities/Product';
 import IProductsRepository from '../models/IProductsRepository';
 import ICreateProductDTO from '../dtos/ICreateProductDTO';
 import IUpdateProductDTO from '../dtos/IUpdateProductDTO';
+import IListProductDTO from '../dtos/IListProductDTO';
 
 class ProductsRepository implements IProductsRepository {
   private ormRepository: Repository<Product>;
@@ -20,8 +21,16 @@ class ProductsRepository implements IProductsRepository {
     return product;
   }
 
-  public async findAll(): Promise<Product[]> {
-    const products = await this.ormRepository.find();
+  public async findAll({
+    category = '',
+    title = '',
+  }: IListProductDTO): Promise<Product[]> {
+    const products = await this.ormRepository.find({
+      where: {
+        category: Like(`%${category}%`),
+        title: Like(`%${title}%`),
+      },
+    });
 
     return products;
   }

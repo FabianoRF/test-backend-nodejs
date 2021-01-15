@@ -7,6 +7,7 @@ const productsController = new ProductsController();
 
 productsRouter.post('/', productsController.create);
 productsRouter.put('/:id', productsController.update);
+productsRouter.patch('/:id', productsController.updateCategory);
 productsRouter.get('/', productsController.index);
 productsRouter.delete('/:id', productsController.delete);
 

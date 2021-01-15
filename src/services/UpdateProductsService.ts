@@ -12,7 +12,7 @@ interface IRequest {
 }
 
 @injectable()
-class ListProductsService {
+class UpdareProductsService {
   constructor(
     @inject('ProductsRepository')
     private productsRepository: IProductsRepository,
@@ -39,4 +39,4 @@ class ListProductsService {
   }
 }
 
-export default ListProductsService;
+export default UpdareProductsService;
