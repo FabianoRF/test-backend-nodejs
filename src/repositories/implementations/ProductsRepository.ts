@@ -31,6 +31,16 @@ class ClientRepository implements IProductsRepository {
     return product;
   }
 
+  public async findByTitle(title: string): Promise<Product | undefined> {
+    const product = await this.ormRepository.findOne({
+      where: {
+        title,
+      },
+    });
+
+    return product;
+  }
+
   public async delete(id: string): Promise<void> {
     await this.ormRepository.delete(id);
   }
