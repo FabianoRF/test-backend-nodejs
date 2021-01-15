@@ -24,7 +24,8 @@ Foram criadas as seguintes rotas conforme solicitado nas histórias:
 Exemplo de requisição:
 
 http://localhost:3333/products
-{
+
+JSON : {
 	"title": "Produto novo",
 	"description": "descricao",
 	"price": 123.90,
@@ -38,6 +39,8 @@ http://localhost:3333/products
 Exemplo de requisição:
 
 http://localhost:3333/products/1232
+
+JSON : 
 {
 	"title": "Produto editado",
 	"description": "Um produto muitadflk adlkfjasdlk",
@@ -58,6 +61,8 @@ http://localhost:3333/products/1232
 - PATCH- /products/:id -> Altera a categoria de um produto, na qual é passado o "id" por parametro e o "category" pelo body
 
 http://localhost:3333/products/1232
+
+JSON : 
 {
 	"category": "calçados"
 }
