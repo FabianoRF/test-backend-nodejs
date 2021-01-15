@@ -21,16 +21,16 @@ Foram criadas as seguintes rotas conforme solicitado nas histórias:
 
 - POST - /products -> cria um novo produto passando os dados: title, description, price e category por json
 
-Exemplo de requisição:
+    Exemplo de requisição:
 
-http://localhost:3333/products
+    http://localhost:3333/products
 
-JSON : {
-	"title": "Produto novo",
-	"description": "descricao",
-	"price": 123.90,
-	"category": "roupas"
-}
+    JSON : {
+      "title": "Produto novo",
+      "description": "descricao",
+      "price": 123.90,
+      "category": "roupas"
+    }
 
 <hr/>
 
